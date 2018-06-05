@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单动画</title>
+    <style>
+    .content-wrap{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin: 0 auto;
+    }
+    .menu-wrap{
+        font-size: 30px;
+        height: 100px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .title{
+        width: 130px;
+        margin: 5px auto;
+        color: #000;
+        transition: color 0.5s;
+        -moz-transition: width 0.5s; /* Firefox 4 */
+        -webkit-transition: width 0.5s; /* Safari 和 Chrome */
+        -o-transition: width 0.5s; /* Opera */
+    }
+    .line{
+        width: 0;
+        height: 4px;
+        margin: 0 auto;
+        padding: 0;
+        overflow:hidden;
+        background-color: #3399FF;
+        transition: width 0.5s;
+        -moz-transition: width 0.5s; /* Firefox 4 */
+        -webkit-transition: width 0.5s; /* Safari 和 Chrome */
+        -o-transition: width 0.5s; /* Opera */
+    }
+    .btn-wrap{
+        width:120px;
+        margin: 0 auto;
+    }
+    .change-style-btn{
+        width: 100%;
+        height: 36px;
+        font-size: 18px;
+        border: 1px solid #999;
+        border-radius: 6px;
+        outline: none;
+    }
+    .change-style-btn:hover{
+        border: 1px solid #3399FF;
+    }
+    </style>
+</head>
+<body>
+    <div class="content-wrap">
+        <div class="menu-wrap">
+            <p id="title" class="title">前端学院</p>
+            <div id="line" class="line"></div>
+        </div>
+        <div class="btn-wrap">
+            <button id="changeStyle" class="change-style-btn" onclick="changeStyle()">切换样式</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+         function changeStyle() {
+            document.getElementById('title').style.color = "#3399FF";
+            document.getElementById('line').style.width = '120px';
+        }
+    </script>
+</body>
+</html>
