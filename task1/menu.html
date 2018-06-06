@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>菜单动画</title>
+    <title>MENU TRANSITION</title>
     <style>
     .content-wrap{
         position: absolute;
@@ -14,13 +14,13 @@
         margin: 0 auto;
     }
     .menu-wrap{
-        font-size: 30px;
+        font-size: 20px;
         height: 100px;
         font-weight: bold;
         text-align: center;
     }
     .title{
-        width: 130px;
+        width: 350px;
         margin: 5px auto;
         color: #000;
         transition: color 0.5s linear;
@@ -28,20 +28,26 @@
         -webkit-transition: color 0.5s linear; /* Safari 和 Chrome */
         -o-transition: color 0.5s linear; /* Opera */
     }
+    .title-active{
+        color: #2ea2f8
+    }
     .line{
         width: 0;
         height: 4px;
         margin: 0 auto;
         padding: 0;
         overflow:hidden;
-        background-color: #3399FF;
+        background-color: #2ea2f8;
         transition: width 0.5s linear;
         -moz-transition: width 0.5s linear; /* Firefox 4 */
         -webkit-transition: width 0.5s linear; /* Safari 和 Chrome */
         -o-transition: width 0.5s linear; /* Opera */
     }
+    .line-active{
+        width: 350px;
+    }
     .btn-wrap{
-        width:120px;
+        width:140px;
         margin: 0 auto;
     }
     .change-style-btn{
@@ -54,33 +60,25 @@
     }
     .change-style-btn:hover{
         border: 1px solid #3399FF;
+        color: #2ea2f8;
     }
     </style>
 </head>
 <body>
     <div class="content-wrap">
         <div class="menu-wrap">
-            <p id="title" class="title">前端学院</p>
+            <p id="title" class="title">To Be A Good Front End Engineer</p>
             <div id="line" class="line"></div>
         </div>
         <div class="btn-wrap">
-            <button id="changeStyle" class="change-style-btn" onclick="changeStyle()">切换样式</button>
+            <button id="changeStyle" class="change-style-btn" onclick="changeStyle()">Change Style</button>
         </div>
     </div>
 
     <script type="text/javascript">
-        let i = [1,2];
         function changeStyle() {
-            if(i[0] === 1){
-                document.getElementById('title').style.color = "#3399FF";
-                document.getElementById('line').style.width = '120px';
-                i.push(i.shift());
-            }else{
-                document.getElementById('title').style.color = "#000";
-                document.getElementById('line').style.width = '0';
-                i.push(i.shift());
-            }
-
+            document.getElementById('title').classList.toggle('title-active');
+            document.getElementById('line').classList.toggle('line-active');
         }
     </script>
 </body>
